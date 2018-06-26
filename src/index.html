@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TimeTravel</title>
+  </head>
+  <body>
+    <main>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row col-12">
+          <div class="wrapper col-2">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Search Specifications</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <!-- <p>Yummy Heading</p> -->
+                    <br></br>
+                    <div class="form-group">Keywords:
+                      <input class="form-control" id="inputKeywords" aria-describedby="keyWordsHelp" placeholder="">
+                      <small id="keyWordsHelp" class="form-text text-muted">Entered Desired Attractions Above.</small>
+                    </div>
+                    <br></br>
+                    <li>
+                      <div class="slidecontainer">
+                        <input type="range" min="0" max="10.0" value="5.0" class="slider" id="myRating">
+                        <p>Rating: <span id="ratingNumber"></span></p>
+                        <br></br>
+                        <p>Set Your Distance:</p>
+                        <input type="range" min="1" max="200" value="100" class="slider" id="myDistance">
+                        <p>Rating: <span id="distanceNumber"></span></p>
+                      </div>
+                    </li>
+                    <br></br>
+                    <li>
+                        <button type="button" id="button" class="btn btn-primary">Search</button>
+                    </li>
+                </ul>
+            </nav>
+          </div>
+          <div id="map" class="col-8"></div>
+          <div class="wrapper col-2">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Bootstrap Sidebar</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Yummy Heading</p>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw8zDFkLcYlC67ewWhYGOm1irmClp2s1c"></script>
+
+    </main>
+  </body>
+</html>
