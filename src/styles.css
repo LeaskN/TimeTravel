@@ -11,10 +11,14 @@ html, body {
   padding: 0;
 }
 main {
-  height: 90%;
+  height: 80%;
 }
 
 .row {
+  height: 100%;
+}
+
+.form {
   height: 100%;
 }
 

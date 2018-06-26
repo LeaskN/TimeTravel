@@ -8,7 +8,7 @@
     <main>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -27,27 +27,20 @@
               <a class="nav-link" href="#">About</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
       </nav>
       <div class="container">
         <div class="row col-12">
           <div class="wrapper col-2">
             <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Search Specifications</h3>
-                </div>
-
+              <form class="form">Search:
+                <input class="form-control" id="inputSearch" aria-describedby="keyWordsHelp" placeholder="">
+                <small id="SearchHelp" class="form-text text-muted">Entered Desired Location Above.</small>
                 <ul class="list-unstyled components">
-                    <!-- <p>Yummy Heading</p> -->
-                    <br>
-                    <div class="form-group">Keywords:
-                      <input class="form-control" id="inputKeywords" aria-describedby="keyWordsHelp" placeholder="">
-                      <small id="keyWordsHelp" class="form-text text-muted">Entered Desired Attractions Above.</small>
-                    </div>
+                  <div class="form-group">Keywords:
+                    <input class="form-control" id="inputKeywords" aria-describedby="keyWordsHelp" placeholder="">
+                    <small id="keyWordsHelp" class="form-text text-muted">Entered Desired Attractions Above.</small>
+                  </div>
                     <br>
                     <li>
                       <div class="slidecontainer">
@@ -56,14 +49,15 @@
                         <br>
                         <p>Set Your Distance:</p>
                         <input type="range" min="1" max="200" value="100" class="slider" id="myDistance">
-                        <p>Rating: <span id="distanceNumber"></span></p>
+                        <p>Distance: <span id="distanceNumber"></span></p>
                       </div>
                     </li>
                     <br>
                     <li>
-                        <button type="button" id="button" class="btn btn-primary">Search</button>
+                        <button type="submit" id="button" class="btn btn-primary">Search</button>
                     </li>
                 </ul>
+              </form>
             </nav>
           </div>
           <div id="map" class="col-8"></div>
@@ -72,41 +66,35 @@
                 <div class="sidebar-header">
                     <h3>Description</h3>
                 </div>
-
-                <ul class="list-unstyled components">
+                  <ul class="list-unstyled components">
                     <p>Description</p>
                     <li>Name
                       <div class="nameContent">NameContentHere
-
                       </div>
                     </li>
                     <li>Distance
                       <div class="nameContent">DistanceContentHere
-
                       </div>
                     </li>
                     <li>Location
                       <div class="nameContent">LocationContentHere
-
                       </div>
                     </li>
                     <li>Description
                       <div class="nameContent">DescriptionContentHere
-
                       </div>
                     </li>
                     <li>Rating
                       <div class="nameContent">RatingContentHere
-
                       </div>
                     </li>
-                </ul>
+                  </ul>
             </nav>
           </div>
         </div>
       </div>
       <div id="bottomSpacing"></div>
-      <div class="card text-center">
+      <!-- <div class="card text-center">
         <div class="card-header">
           Featured
         </div>
@@ -118,7 +106,7 @@
         <div class="card-footer text-muted">
           2 days ago
         </div>
-      </div>
+      </div> -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw8zDFkLcYlC67ewWhYGOm1irmClp2s1c"></script>
     </main>
   </body>
