@@ -12,7 +12,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor01">
+        <div class="collapse navbar-collapse" id="navbarLeft">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -43,23 +43,23 @@
 
                 <ul class="list-unstyled components">
                     <!-- <p>Yummy Heading</p> -->
-                    <br></br>
+                    <br>
                     <div class="form-group">Keywords:
                       <input class="form-control" id="inputKeywords" aria-describedby="keyWordsHelp" placeholder="">
                       <small id="keyWordsHelp" class="form-text text-muted">Entered Desired Attractions Above.</small>
                     </div>
-                    <br></br>
+                    <br>
                     <li>
                       <div class="slidecontainer">
                         <input type="range" min="0" max="10.0" value="5.0" class="slider" id="myRating">
                         <p>Rating: <span id="ratingNumber"></span></p>
-                        <br></br>
+                        <br>
                         <p>Set Your Distance:</p>
                         <input type="range" min="1" max="200" value="100" class="slider" id="myDistance">
                         <p>Rating: <span id="distanceNumber"></span></p>
                       </div>
                     </li>
-                    <br></br>
+                    <br>
                     <li>
                         <button type="button" id="button" class="btn btn-primary">Search</button>
                     </li>
@@ -70,55 +70,56 @@
           <div class="wrapper col-2">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
+                    <h3>Description</h3>
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Yummy Heading</p>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
+                    <p>Description</p>
+                    <li>Name
+                      <div class="nameContent">NameContentHere
+
+                      </div>
                     </li>
-                    <li>
-                        <a href="#">About</a>
+                    <li>Distance
+                      <div class="nameContent">DistanceContentHere
+
+                      </div>
                     </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
+                    <li>Location
+                      <div class="nameContent">LocationContentHere
+
+                      </div>
                     </li>
-                    <li>
-                        <a href="#">Portfolio</a>
+                    <li>Description
+                      <div class="nameContent">DescriptionContentHere
+
+                      </div>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
+                    <li>Rating
+                      <div class="nameContent">RatingContentHere
+
+                      </div>
                     </li>
                 </ul>
             </nav>
           </div>
         </div>
       </div>
+      <div id="bottomSpacing"></div>
+      <div class="card text-center">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">This Will Be The Selected Item</h5>
+          <p class="card-text">This will be a short description of said item.</p>
+          <a href="#" class="btn btn-primary">Link to their website</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw8zDFkLcYlC67ewWhYGOm1irmClp2s1c"></script>
-
     </main>
   </body>
 </html>
