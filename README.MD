@@ -1,8 +1,3 @@
-Setup/Development
-Add wireframes to your github repo in a wireframes folder
-Deployed link in readme
-Screenshot of Landing page at top of readme below app name
-
 ![](./ScreenShot.png)
 ## App name:
 
@@ -45,7 +40,7 @@ yarn start
 yarn build
 ```
 
-##Project Assets
+## Project Assets
 
 * [Trello Board](https://trello.com/b/guGZ2U9h/mapproject)
 * [Wireframes](https://www.draw.io/#G1HqeYI7dAOh9EvkQfrrwfvNp2VpZTpQpc)
