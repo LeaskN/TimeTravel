@@ -1,7 +1,9 @@
 body{
   font-size: .92em;
 }
-
+.photoTag{
+  width: 100%
+}
 #map {
   height: 100%;
 }

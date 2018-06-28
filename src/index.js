@@ -7,6 +7,8 @@ const form = document.querySelector(".form");
 const userLocationInput = document.getElementById("inputSearch");
 const position = {};
 const bottomSpacing = document.querySelector('#bottomSpacing');
+const photoReference = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&key=AIzaSyDw8zDFkLcYlC67ewWhYGOm1irmClp2s1c&photoreference='
+
 
 let placeObject = {};
 let map;
@@ -108,21 +110,21 @@ function showSearchLocation(position) {
       places.forEach((place) => {
         if(place.rating >= rating){
           addResultAndMarker(place, map);
-          const eachPlace = document.createElement('li');
-          placeObject = place;
-          eachPlace.innerText = place.name;
-          bottomSpacing.appendChild(eachPlace);
-          eachPlace.addEventListener('click', () => {
-            showCard(eachPlace);
-            // console.log('yo');
-          });
+          // const eachPlace = document.createElement('li');
+          // placeObject = place;
+          // eachPlace.innerText = place.name;
+          // bottomSpacing.appendChild(eachPlace);
+          // eachPlace.addEventListener('click', () => {
+          //   showCard(eachPlace);
+          // });
         }
       });
     });
 }
-const showCard = (eachPlace) => {
-  console.log(placeObject)
-  const text = eachPlace.innerHTML;
+const showCard = (placeObject) => {
+  console.log(placeObject.photos[0].photo_reference)
+  console.log(placeObject.photos[0])
+
   document.querySelector('#optionsList').innerHTML = `
   <div class="sidebar-header">
       <h3>${placeObject.name}</h3>
@@ -140,9 +142,14 @@ const showCard = (eachPlace) => {
         <div class="nameContent">${placeObject.vicinity}
         </div>
       </li>
+      <li>
+        <div class="nameContent" id="photoTag"><img src="${photoReference + placeObject.photos[0].photo_reference}">
+        </div>
+      </li>
     </ul>
   `
 }
+
 function getPlaces(location) {
   const placesAPI = corsAPI + `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&keyword=${keyword}&radius=${distance}&key=AIzaSyDw8zDFkLcYlC67ewWhYGOm1irmClp2s1c`
   return fetch(placesAPI)
@@ -154,14 +161,13 @@ function getPlaces(location) {
 }
 
 function addResultAndMarker(place, map) {
-  markers.push(
-  new google.maps.Marker({
-    position: place.geometry.location,
-    map: map,
-    title: place.name
-  }));
+  let marker =   new google.maps.Marker({
+                  position: place.geometry.location,
+                  map: map,
+                  title: place.name
+                })
+  markers.push(marker);
+  marker.addListener('click', () => {
+    showCard(place);
+  });
 }
-
-// function getMarkerInfo(){
-//   marker.click(console.log('click'));
-// }
