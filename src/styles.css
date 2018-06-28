@@ -1,5 +1,5 @@
 body{
-  font-size: 1em;
+  font-size: .92em;
 }
 
 #map {
@@ -29,6 +29,9 @@ main {
 
 .slidecontainer {
     width: 100%;
+}
+.navbar {
+  line-height: .1;
 }
 
 .slider {

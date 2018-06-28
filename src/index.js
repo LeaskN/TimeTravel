@@ -6,21 +6,23 @@ const locationInput = document.querySelector('#inputSearch');
 const form = document.querySelector(".form");
 const userLocationInput = document.getElementById("inputSearch");
 const position = {};
+const bottomSpacing = document.querySelector('#bottomSpacing');
 
+let placeObject = {};
 let map;
 let marker;
 let markers = [];
-let rating = 5;
-let distance = 100;
+let rating = 0;
+let distance = 20000;
 let keyword = '';
 
 let ratingSlider = document.getElementById("myRating");
 let ratingOutput = document.getElementById("ratingNumber");
 
-ratingOutput.innerHTML = ratingSlider.value + "/10";
+ratingOutput.innerHTML = '⭐️' + "/5";
 
 ratingSlider.oninput = function() {
-  ratingOutput.innerHTML = this.value + "/10";
+  ratingOutput.innerHTML = '⭐️'.repeat(this.value);
   rating = ratingSlider.value
 }
 let distanceSlider = document.getElementById("myDistance");
@@ -100,16 +102,47 @@ function showSearchLocation(position) {
   marker.setMap(null);
   position = position;
 
-  console.log(keyword);
 
   getPlaces(location)
     .then(places => {
       places.forEach((place) => {
-        addResultAndMarker(place, map);
+        if(place.rating >= rating){
+          addResultAndMarker(place, map);
+          const eachPlace = document.createElement('li');
+          placeObject = place;
+          eachPlace.innerText = place.name;
+          bottomSpacing.appendChild(eachPlace);
+          eachPlace.addEventListener('click', () => {
+            showCard(eachPlace);
+            // console.log('yo');
+          });
+        }
       });
     });
 }
-
+const showCard = (eachPlace) => {
+  console.log(placeObject)
+  const text = eachPlace.innerHTML;
+  document.querySelector('#optionsList').innerHTML = `
+  <div class="sidebar-header">
+      <h3>${placeObject.name}</h3>
+  </div>
+    <ul class="list-unstyled components">
+      <li>Price Range:
+        <div class="nameContent">${'💰'.repeat((placeObject.price_level))}
+        </div>
+      </li>
+      <li>Rating:
+        <div class="nameContent">${'⭐️'.repeat(Math.floor(placeObject.rating))}
+        </div>
+      </li>
+      <li>Location:
+        <div class="nameContent">${placeObject.vicinity}
+        </div>
+      </li>
+    </ul>
+  `
+}
 function getPlaces(location) {
   const placesAPI = corsAPI + `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&keyword=${keyword}&radius=${distance}&key=AIzaSyDw8zDFkLcYlC67ewWhYGOm1irmClp2s1c`
   return fetch(placesAPI)
@@ -121,13 +154,14 @@ function getPlaces(location) {
 }
 
 function addResultAndMarker(place, map) {
-  if(place.rating > rating/2){
-    markers.push(
-    new google.maps.Marker({
-      position: place.geometry.location,
-      map: map,
-      title: place.name
-    }));
-    console.log(place.name)
-  }
+  markers.push(
+  new google.maps.Marker({
+    position: place.geometry.location,
+    map: map,
+    title: place.name
+  }));
 }
+
+// function getMarkerInfo(){
+//   marker.click(console.log('click'));
+// }
